@@ -1,0 +1,35 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+	<html>
+		<head lang=ru>
+			<title>Website</title>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<link rel="stylesheet" href="{% static 'Main/css/zero.css' %}">
+			<link rel="stylesheet" href="{% static 'Main/css/style.css' %}">
+			<!--Font Awesome-->
+			<script src="https://kit.fontawesome.com/775dad8182.js" crossorigin="anonymous"></script>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+		</head>
+		<body>
+			{% block body %}
+			{% endblock %}
+			<footer>
+				<div class="content content-footer">
+					<div class="footer__l-el">
+						<p>© Copyright 2020, All rights reserved.</p>
+					</div>
+					<div class="footer__r-el">
+					<div class="footer__r-el-icons"><img src="{% static 'Main/img/1468368389_Facebook_Rounded_Solid.png' %}" alt=""></div>
+					<div class="footer__r-el-icons"><img src="{% static 'Main/img/1468368398_Twitter_Rounded_Solid.png' %}" alt=""></div>
+					<div class="footer__r-el-icons"><img src="{% static 'Main/img/1468368412_Google_Rounded_Solid.png' %}" alt=""></div>
+					<div class="footer__r-el-icons"><img src="{% static 'Main/img/1468368407_LinkedIn_Rounded_Solid.png' %}" alt=""></div>
+					</div>
+				</div>
+			</footer>
+			<!--jQuery lib -->
+			<script src="{% static 'Main/js/script.js' %}"></script>
+		</body>
+	</html>

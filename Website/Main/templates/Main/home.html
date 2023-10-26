@@ -1,0 +1,232 @@
+{% extends 'Main/base.html' %}
+{% load static %}
+
+
+{% block body %}
+			<nav class="nav">
+				<div class="content">
+					<div class="nav__body">
+						<div class="nav__bur"><span></span></div><!--menu burger-->
+						<div class="nav__menu">
+							<ul class="nav__list">
+								<li>
+									<a class="nav__link_first nav__link nav__link_act" href="#home">Home</a>
+								</li>
+								<li>
+									<a class="nav__link nav__link_act" href="#aboutus">About</a>
+								</li>
+								<li>
+									<a class="nav__link nav__link_act" href="#contacts">Contacts</a>	
+								</li>
+								{% if not request.session.is_auth %}
+								<li>
+								<a class="nav__link nav__link_act" href="{% url 'login' %}">Login</a>
+								</li>
+								{% else%}
+								<li>
+								<a class="nav__link nav__link_act" href="{% url 'logout' %}">Logout</a>
+								</li>
+								{% endif %}
+								{% if request.session.is_auth %}
+								<li>
+									<div class="nav__link">{{ user.name }}</div>
+									<div class="nav__link">{{ user.email }}</div>
+								</li>
+								{% endif %}
+							</ul>
+						</div>
+					</div>
+				</div>
+			</nav>
+			<header id="home">
+				<div class="content header">
+					<div class="header__left">
+						<div class="header__left-topel">
+							<h1>our strong
+								organisation</h1>
+							<p>Lorem ipsum dolor sit amet, consectetur adipis cing elit, sed do eiusmod tempor incididunt  ut labore et. ectetur adig ipis cing elit, sed do eiusmod tempor incididunt.</p>
+						</div>
+						<div class="header__left-botel">
+							<button class="butt">Contact Us</button>
+						</div>
+					</div>
+					<div class="header__right">
+						<video src="{% static 'Main/img/Forest - 49981.mp4' %}" controls poster="none">
+						</video>
+					</div>
+				</div>
+			</header>
+			<section>
+				<div id="aboutus" class="content aboutus">
+					<div class="aboutus__left">
+						<div><h2>
+							do you know we can 
+							provide for you ?
+						</h2></div>
+						<div><p>
+							Lorem ipsum dolor sit amet, consectetur adipis cing elit, sed do eiusmod tempor incididunt ut labore et.Lorem ni ipsum dolor sit amet, consectetur adipis cing elit, ed doi eiusmod tempor incididunt ut labore et.
+						</p></div>
+						<div><button class="butt">
+							Learn More
+						</button></div>
+					</div>
+					<div class="aboutus__right">
+						<div class="aboutus__right-col">
+							<div class="aboutus__right-col-el" >
+								<i class="fas fa-cog"></i>
+								<h3>Management</h3>
+								<p>Lorem ipsum dolor sitea amet, zixf conseit  adipi cing elit, seddi do eiusmod btdempor in didunt utlae ore etioe.Lorem ipsum new idolor
+								</p>
+							</div>
+							<div class="aboutus__right-col-el">
+								<i class="fas fa-pencil-alt"></i>
+								<h3>UI /UX Design</h3>
+								<p>Lorem ipsum dolor sitea amet, zixf conseit  adipi cing elit, seddi do eiusmod btdempor in didunt utlae ore etioe.Lorem ipsum new idolor sit amet,</p>
+							</div>
+						</div>
+						<div class="aboutus__right-col">
+							<div class="aboutus__right-col-el" >
+								<i class="fas fa-gem"></i>
+								<h3>Logo / Branding</h3>
+								<p>Lorem ipsum dolor sitea amet, zixf conseit  adipi cing elit, seddi do eiusmod btdempor in didunt utlae ore etioeew idolor sit amet,</p>
+							</div>
+							<div class="aboutus__right-col-el">
+								<i class="fas fa-truck"></i>
+								<h3>Animation</h3>
+								<p>Lorem ipsum dolor sitea amet, zixf conseit  adipi cing elit, seddi do eiusmod btdempor in didunt utlae ore etioeew idolor sit amet,</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div id="portfolio" class="content futureprod">
+					<div class="title-of-section">
+						<div class="title-of-section__header"><h2>
+							feature products
+						</h2></div>
+						<div class="title-of-section__descr"><p>
+							Lorem ipsum dolor sit amet, consectetur adipis cing elit,sed do eiusmod tempor incididunt ut labore et.
+						</p></div>
+						<div class="title-of-section__line"></div>
+					</div>
+					<div class="futureprod__row2">
+						<div><a class="red futureprod__row2_link f_l">all</a></div>
+						<div><a class="futureprod__row2_link s_l">print template</a></div>
+						<div><a class="futureprod__row2_link t_l">web template</a></div>
+						<div><a class="futureprod__row2_link f1_l">user interface</a></div>
+						<div><a class="futureprod__row2_link f2_l">mock-up</a></div>
+					</div>
+					<div class="futureprod__row1 choise_img">
+						<div class="futureprod__row1-top">
+							<div class="f-img"><img src="" alt=""></div>
+							<div class="s-img"><img src="" alt=""></div>
+							<div class="t-img"><img src="" alt=""></div>
+							<div class="fth-img"><img src="" alt=""></div>
+						</div>
+						<div class="futureprod__row1-top">
+							<div class="ff-img"><img src="" alt=""></div>
+							<div class="sx-img"><img src="" alt=""></div>
+							<div class="sn-img"><img src="" alt=""></div>
+							<div class="e-img"><img src="" alt=""></div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="content meetus">
+					<div class="title-of-section">
+						<div class="title-of-section__header"><h2>
+							Meet my colleague
+						</h2></div>
+						<div class="title-of-section__descr"><p>
+							Lorem ipsum dolor sit amet, consectetur adipis cing elit, sed dooing eiusmod tempor incididut labore Ui / Ux , print template.
+						</p></div>
+						<div class="title-of-section__line"></div>
+					</div>
+					<div class="meetus__row2">
+						<div class="meetus__row2-col">
+							<img class="left-img" src="" alt="">
+						</div>
+						<div class="meetus__row2-col">
+							<div class="meetus__row2-col-el1">
+								<div><h3>
+									mark waugh
+								</h3></div>
+								<div><p>
+									Lorem ipsum dolor sit amet, consectetur adipis cing elit, sed dooing eiusmod tempor incididut labore Ui / Ux , print template.
+								</p></div>
+								<div>
+									<a class="socnet_act" href="" target="_blank">Facebook</a>
+									<a class="socnet_act" href="" target="_blank">Dribble</a>
+									<a class="socnet_act" href="" target="_blank">Behance</a>
+									<a class="socnet_act" href="" target="_blank">Twitter</a>
+								</div>
+							</div>
+							<div class="meetus__row2-col-el2">
+								<div><img src="" alt="">
+									<div>Victoria Raza</div></div>
+								<div><img src="" alt="">
+									<div>Ivan Ivanov</div></div>
+								<div><img src="" alt="">
+									<div>John John</div></div>
+								<div><img src="" alt="">
+									<div>Kristina Kristy</div></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="subscribe ">
+				<div class="subscribe__header">
+					<h2>Design tips, tricks, and freebies. Delivered weekly.</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipis cing elit, sed do eiusmod.</p>
+				</div>
+				<div class="subscribe__forms">
+					<input type="email" placeholder="Email address ...">
+					<button class="butt">subscribe</button>
+				</div>
+			</section>
+			<section>
+				<div class="content on-touch">
+					<div class="title-of-section">
+						<div class="title-of-section__header"><h2>
+							get in touch
+						</h2></div>
+						<div class="title-of-section__descr"><p>
+							Lorem ipsum dolor sit amet, consectetur adipis cing elit, sed do eiusmod tempor incididunt ut labore et.ur adipis cing elit, sed do eiusmod tempor incididunt ut labore et. ur adipis cing elit, sed do eiusmod tempor incididunt ut labore et.
+						</p></div>
+						<div class="title-of-section__line"></div>
+					</div>
+					<div class="on-touch__feedback">
+						<div class="on-touch__feedback-forms">
+							<div class="on-touch__feedback-forms-el">
+								<input class="btn" type="text" placeholder="Your name">
+								<input class="btn" type="Email" placeholder="Your email">
+							</div>
+							<div class="on-touch__feedback-forms-el1">
+								<textarea class="btn" name="" id="" cols="30" rows="10" placeholder="Type your message" ></textarea>
+							</div>
+							<div class="on-touch__feedback-forms-el2">
+								<button class="butt btn-red" type="submit">Send message</button>
+							</div>
+						</div>
+						<div id="contacts" class="on-touch__feedback-contacts">
+							<div>
+								<h4>contact info</h4>
+							</div>
+							<div>
+								<p>Dimond 24 / A, Amash, Krisch,
+									Bangladesh</p>
+							</div>
+							<div>
+								<p>ChedrDen@gmail.com</p>
+							</div>
+							<div>
+								<p>8029 999 99 99</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+{% endblock %}

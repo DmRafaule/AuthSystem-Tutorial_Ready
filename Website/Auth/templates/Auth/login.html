@@ -1,0 +1,26 @@
+{% extends 'Main/base.html' %}
+{% load static %}
+
+{% block body%}
+<div class="auth_form--wrapper">
+	<div class="auth_form">
+		<div class="on-touch__feedback-forms-el">
+		{% csrf_token %}
+		<form  class="form_form form_login" id="toLogin" action="send_new_user" method="get">
+		<div id="common-error" class="hint-container on-touch__feedback"></div>
+			<div class="on-touch__feedback">
+				<input class="btn" placeholder="username" type="text" name="username" autocomplete="off" id="username">
+			</div>
+			<div class="on-touch__feedback">
+				<input class="btn" placeholder="password" type="password" name="password" autocomplete="off" id="password">
+			</div>
+			<div class="on-touch__feedback">
+				<div id="signin" class="butt btn-red">Sign in</div>
+				<div class="butt btn-red"><a class="ref" href="{%url 'signup' %}">Sign up</a></div>
+			</div>
+		</form> 
+		</div>
+	</div>
+</div>
+<script src="{% static 'Auth/js/on_signin.js' %}"></script>
+{% endblock %}

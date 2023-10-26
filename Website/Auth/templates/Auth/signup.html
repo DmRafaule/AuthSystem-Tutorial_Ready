@@ -1,0 +1,31 @@
+{% extends 'Main/base.html' %}
+{% load static %}
+
+{% block body%}
+<div class="auth_form--wrapper">
+	<div class="auth_form">
+		<div class="on-touch__feedback-forms-el">
+		{% csrf_token %}
+		<form  enctype="multipart/form-data" class="btn form_form form_login" id="toLogin">
+		<div id="common-error" class="hint-container on-touch__feedback"></div>
+			<div class="on-touch__feedback">
+				<input class="btn" placeholder="username" type="text" name="username" autocomplete="off" id="username">
+			</div>
+			<div class="on-touch__feedback">
+				<input class="btn" placeholder="email" type="text" name="email" autocomplete="off" id="email">
+			</div>
+			<div class="on-touch__feedback">
+				<input class="btn" placeholder="password" type="password" name="password" autocomplete="off" id="password">
+			</div>
+			<div class="on-touch__feedback">
+				<input class="btn" placeholder="retype password" type="password" name="repassword" autocomplete="off" id="repassword">
+			</div>
+			<div class="on-touch__feedback">
+				<div id="signup" class="butt btn-red">Register</button>
+			</div>
+		</form> 
+		</div>
+	</div>
+</div>
+<script src="{% static 'Auth/js/on_signup.js' %}"></script>
+{% endblock %}
